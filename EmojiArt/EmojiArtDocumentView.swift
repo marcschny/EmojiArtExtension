@@ -18,9 +18,12 @@ struct EmojiArtDocumentView: View {
         VStack {
             createPalette()
             GeometryReader { geometry in
-                ZStack{
+                ZStack(alignment: .top){
                     createBackground(geometry: geometry)
                     createEmojiLayer(geometry: geometry)
+                    TimeTracker(time: 20)
+                        .padding()
+                        .frame(width: geometry.size.width, alignment: Alignment.bottomTrailing)
                 }
                 .gesture(doubleTapGesture(in: geometry))
             }
@@ -167,4 +170,10 @@ struct EmojiArtDocumentView: View {
     
     // MARK: - Drawing constants
     private let defaultEmojiSize: CGFloat = 40
+}
+
+struct ContentPreview_Previews: PreviewProvider{
+    static var previews: some View{
+        EmojiArtDocumentView(document: EmojiArtDocumentViewModel())
+    }
 }

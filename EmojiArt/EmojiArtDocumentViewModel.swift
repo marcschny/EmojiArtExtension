@@ -7,6 +7,8 @@ class EmojiArtDocumentViewModel: ObservableObject {
 
     private static let emojiArtDocumentKey = "EmojiArtDocumentViewModel.Untitled"
     
+    //TODO: create TimePublisher
+    
     @Published private var emojiArtModel: EmojiArtModel
     private var emojiArtModelSink: AnyCancellable?
     @Published private(set) var backgroundImage: UIImage?

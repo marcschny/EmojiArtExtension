@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD2927612773D1640066F40D /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2927602773D1640066F40D /* TimeTracker.swift */; };
 		DEF3E4F7272AEFAB00A93527 /* EmojiArtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3E4F6272AEFAB00A93527 /* EmojiArtApp.swift */; };
 		DEF3E4FB272AEFAE00A93527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF3E4FA272AEFAE00A93527 /* Assets.xcassets */; };
 		DEF3E4FE272AEFAE00A93527 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF3E4FD272AEFAE00A93527 /* Preview Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD2927602773D1640066F40D /* TimeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
 		DEF3E4F3272AEFAB00A93527 /* EmojiArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF3E4F6272AEFAB00A93527 /* EmojiArtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtApp.swift; sourceTree = "<group>"; };
 		DEF3E4FA272AEFAE00A93527 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				DEF3E4FA272AEFAE00A93527 /* Assets.xcassets */,
 				DEF3E4FC272AEFAE00A93527 /* Preview Content */,
 				F8032AEE27462993004B6C35 /* PaletteChooser.swift */,
+				DD2927602773D1640066F40D /* TimeTracker.swift */,
 			);
 			path = EmojiArt;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				F8032AF127463308004B6C35 /* EmojiArtDocumentViewModel+Palette.swift in Sources */,
 				DEF3E523272AF04B00A93527 /* EmojiArtDocumentViewModel.swift in Sources */,
 				F8032AEF27462993004B6C35 /* PaletteChooser.swift in Sources */,
+				DD2927612773D1640066F40D /* TimeTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
