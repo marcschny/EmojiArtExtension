@@ -1,22 +1,34 @@
 import SwiftUI
+import Combine
 
 
 struct TimeTracker: View{
     
-    var time: Int   //in seconds
+    
+    let timerPublisher = Timer.TimerPublisher(interval: 1.0, runLoop: .main, mode: .default)
+    let cancellable: AnyCancellable?
+    let startDate: Date
+    @State private var timeSpent: Double = EmojiArtModel().timer ?? 0
+    
+    init(){
+        self.cancellable = timerPublisher.connect() as? AnyCancellable
+        startDate = Date()
+    }
     
     var body: some View{
         return HStack{
             Image(systemName: "timer")
-            Text("\(time) s")
+            Text("\(String(format: "%.0f", timeSpent)) s")
+        }.onReceive(timerPublisher){ newTime in
+            timeSpent = newTime.timeIntervalSince(startDate)
         }
     }
     
-    func startTimeTracker(){
+    mutating func startTimeTracker(){
         print("Tracker started")
     }
     
-    func stopTimeTracker(){
+    mutating func stopTimeTracker(){
         print("Tracker stopped")
     }
     

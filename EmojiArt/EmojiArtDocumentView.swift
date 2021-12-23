@@ -21,7 +21,7 @@ struct EmojiArtDocumentView: View {
                 ZStack(alignment: .top){
                     createBackground(geometry: geometry)
                     createEmojiLayer(geometry: geometry)
-                    TimeTracker(time: 20)
+                    TimeTracker()
                         .padding()
                         .frame(width: geometry.size.width, alignment: Alignment.bottomTrailing)
                 }
