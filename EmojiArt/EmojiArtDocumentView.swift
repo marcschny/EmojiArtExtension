@@ -4,6 +4,7 @@ struct EmojiArtDocumentView: View {
     
     @ObservedObject var document: EmojiArtDocumentViewModel
     @State private var chosenPalette: String
+    @State private var isPastingExplanationPresented = false
 
     init(document: EmojiArtDocumentViewModel) {
         self.document = document
@@ -30,6 +31,22 @@ struct EmojiArtDocumentView: View {
             .gesture(panGesture())
             .gesture(zoomGesture())
             .clipped()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    if let url = UIPasteboard.general.url {
+                        document.backgroundURL = url
+                    } else {
+                        isPastingExplanationPresented = true
+                    }
+                } label: {
+                    Image(systemName: "doc.on.clipboard").imageScale(.large)
+                }
+                .alert(isPresented: $isPastingExplanationPresented) {
+                    Alert(title: Text("Paste Background Image"), message: Text("Copy the URL of an image to set it as background image"))
+                }
+            }
         }
     }
     
@@ -102,8 +119,8 @@ struct EmojiArtDocumentView: View {
     }
 
     // MARK: - Panning
-    @State private var steadyPanOffset: CGSize = .zero //what's steady at the end of gesture
-    @GestureState private var gesturePanOffset: CGSize = .zero //is updated during gesture
+    @State private var steadyPanOffset: CGSize = .zero
+    @GestureState private var gesturePanOffset: CGSize = .zero
     private var panOffset: CGSize {
         steadyPanOffset + gesturePanOffset
     }
@@ -170,10 +187,4 @@ struct EmojiArtDocumentView: View {
     
     // MARK: - Drawing constants
     private let defaultEmojiSize: CGFloat = 40
-}
-
-struct ContentPreview_Previews: PreviewProvider{
-    static var previews: some View{
-        EmojiArtDocumentView(document: EmojiArtDocumentViewModel())
-    }
 }

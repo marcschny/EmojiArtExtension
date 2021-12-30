@@ -4,7 +4,7 @@ import SwiftUI
 struct EmojiArtApp: App {
     var body: some Scene {
         WindowGroup {
-            EmojiArtDocumentView(document: EmojiArtDocumentViewModel())
+            EmojiArtDocumentChooser(store: EmojiArtDocumentStore())
         }
     }
 }
