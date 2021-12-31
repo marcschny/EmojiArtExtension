@@ -30,16 +30,22 @@ struct WallView: View {
                 .navigationTitle(store.name(for: document))
         ){
             ZStack(alignment: .bottom){
-                //background (show gray rectangle if document has no backgroundImage)
+                //background (show gray rectangle if document has no backgroundImage or backgroundColor)
                 VStack {
                     if let background = document.backgroundImage {
                         Image(uiImage: background)
                             .resizable()
                             .aspectRatio(1, contentMode: .fill)
                     } else {
-                        Rectangle()
-                            .fill(.gray)
-                            .aspectRatio(1, contentMode: .fill)
+                        if document.backgroundColor == document.defaultBackgroundColor{
+                            Rectangle()
+                                .fill(.gray)
+                                .aspectRatio(1, contentMode: .fill)
+                        }else{
+                            Rectangle()
+                                .fill(document.backgroundColor)
+                                .aspectRatio(1, contentMode: .fill)
+                        }
                     }
                 }
                 //document name on top of background
