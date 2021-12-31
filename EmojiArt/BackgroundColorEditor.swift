@@ -35,8 +35,9 @@ struct BackgroundColorEditor: View{
                 ColorPicker("Background Color", selection: $chosenColor)
                     .onChange(of: chosenColor) { newValue in
                         chosenColor = newValue
+                        print(newValue)
                     }
-                
+                //TODO: why opacity slider? ColorPicker already has one implemented!
                 HStack {
                     Slider(value: $chosenOpacity)
                         .onChange(of: chosenOpacity) { newValue in

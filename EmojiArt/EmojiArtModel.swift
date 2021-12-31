@@ -1,9 +1,11 @@
 import Foundation
+import SwiftUI
 
 struct EmojiArtModel: Codable {
     var backgroundURL: URL?
     var emojis = [Emoji]()
     var timer: Double?
+    var backgroundColor: Color = Color.white
 
     init() { }
 
