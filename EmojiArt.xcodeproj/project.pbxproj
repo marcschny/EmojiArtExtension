@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD2927612773D1640066F40D /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2927602773D1640066F40D /* TimeTracker.swift */; };
+		DD4488C6277F53DC00F38D75 /* BackgroundColorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */; };
 		DD4CC1FD277DEF0C00FCA1A1 /* PaletteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CC1FC277DEF0C00FCA1A1 /* PaletteEditor.swift */; };
 		DD4CC1FF277DEF2400FCA1A1 /* EmojiArtDocumentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CC1FE277DEF2400FCA1A1 /* EmojiArtDocumentStore.swift */; };
 		DD4CC201277DEF3800FCA1A1 /* EmojiArtDocumentChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CC200277DEF3800FCA1A1 /* EmojiArtDocumentChooser.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		DD2927602773D1640066F40D /* TimeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
+		DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorEditor.swift; sourceTree = "<group>"; };
 		DD4CC1FC277DEF0C00FCA1A1 /* PaletteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteEditor.swift; sourceTree = "<group>"; };
 		DD4CC1FE277DEF2400FCA1A1 /* EmojiArtDocumentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocumentStore.swift; sourceTree = "<group>"; };
 		DD4CC200277DEF3800FCA1A1 /* EmojiArtDocumentChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocumentChooser.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				DD4CC200277DEF3800FCA1A1 /* EmojiArtDocumentChooser.swift */,
 				DD4CC202277DEF4F00FCA1A1 /* EditableText.swift */,
 				DD4CC28C277E0B9100FCA1A1 /* WallView.swift */,
+				DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */,
 			);
 			path = EmojiArt;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				F8032AEF27462993004B6C35 /* PaletteChooser.swift in Sources */,
 				DD4CC201277DEF3800FCA1A1 /* EmojiArtDocumentChooser.swift in Sources */,
 				DD2927612773D1640066F40D /* TimeTracker.swift in Sources */,
+				DD4488C6277F53DC00F38D75 /* BackgroundColorEditor.swift in Sources */,
 				DD4CC1FD277DEF0C00FCA1A1 /* PaletteEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

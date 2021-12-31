@@ -5,10 +5,15 @@ struct EmojiArtDocumentView: View {
     @ObservedObject var document: EmojiArtDocumentViewModel
     @State private var chosenPalette: String
     @State private var isPastingExplanationPresented = false
+    @State private var chosenBackgroundColor: Color
+    @State private var chosenOpacity: Double
+    @State private var isBackgroundColorEditorPresented = false
 
     init(document: EmojiArtDocumentViewModel) {
         self.document = document
         chosenPalette = document.defaultPalette
+        chosenBackgroundColor = document.defaultBackgroundColor
+        chosenOpacity = document.defaultBackgroundOpacity
     }
 
     private var isLoading: Bool {
@@ -60,8 +65,22 @@ struct EmojiArtDocumentView: View {
                             .font(Font.system(size: defaultEmojiSize))
                             .onDrag { NSItemProvider(object: emoji as NSString) }
                     }
+                    
                 }
             }
+            
+            Button(action: {
+                isBackgroundColorEditorPresented = true
+            }) {
+                Image(systemName: "drop.fill")
+                    .font(.system(size: 34))
+                    .foregroundStyle(.linearGradient(colors: [.green, .cyan, .blue], startPoint: .top, endPoint: .bottom))
+            }
+            .padding(.horizontal)
+            .sheet(isPresented: $isBackgroundColorEditorPresented){
+                BackgroundColorEditor(isPresented: $isBackgroundColorEditorPresented, chosenColor: $chosenBackgroundColor, chosenOpacity: $chosenOpacity, document: document)
+            }
+            
         }.padding(.horizontal)
     }
     

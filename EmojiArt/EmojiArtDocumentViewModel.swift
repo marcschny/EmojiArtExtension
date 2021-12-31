@@ -1,6 +1,9 @@
 import SwiftUI
 import Combine
 
+//TODO: task 1 - time tracker not working
+
+
 class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifiable {
     static func == (lhs: EmojiArtDocumentViewModel, rhs: EmojiArtDocumentViewModel) -> Bool {
         lhs.id == rhs.id
@@ -13,6 +16,11 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
     let id: UUID
     
     static let palette: String =  "🐶🐱🐹🐰🦊🐼🐨🐯🐸🐵🐧🐦🐤🦆🦅🦇🐺"
+    
+    // background defaults
+    var defaultBackgroundColor: Color = Color.white
+    var defaultBackgroundOpacity: Double = 1
+    
     
     @Published private var emojiArtModel: EmojiArtModel
     private var emojiArtModelSink: AnyCancellable?
