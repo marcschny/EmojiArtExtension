@@ -73,19 +73,19 @@ struct EmojiArtDocumentView: View {
                 isBackgroundColorEditorPresented = true
             }) {
                 Image(systemName: "drop.fill")
-                    .font(.system(size: 34))
+                    .font(.system(size: 32))
                     .foregroundStyle(.linearGradient(colors: [.green, .cyan, .blue], startPoint: .top, endPoint: .bottom))
             }
             .padding(.horizontal)
             .sheet(isPresented: $isBackgroundColorEditorPresented){
-                BackgroundColorEditor(isPresented: $isBackgroundColorEditorPresented, chosenColor: $chosenBackgroundColor, chosenOpacity: $chosenOpacity, document: document)
+                BackgroundColorEditor(isPresented: $isBackgroundColorEditorPresented, chosenColor: document.backgroundColor, document: document)
             }
             
         }.padding(.horizontal)
     }
     
     private func createBackground(geometry: GeometryProxy) -> some View {
-        return Color.white.overlay(
+        return document.backgroundColor.overlay(
             Group {
                 if let image =  document.backgroundImage {
                     Image(uiImage: image)

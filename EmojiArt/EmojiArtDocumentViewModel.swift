@@ -21,6 +21,15 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
     var defaultBackgroundColor: Color = Color.white
     var defaultBackgroundOpacity: Double = 1
     
+    var backgroundColor: Color {
+        get {
+            emojiArtModel.backgroundColor
+        }
+        set {
+            emojiArtModel.backgroundColor = newValue
+        }
+    }
+    
     
     @Published private var emojiArtModel: EmojiArtModel
     private var emojiArtModelSink: AnyCancellable?
