@@ -28,6 +28,7 @@ struct TimeTracker: View{
         }
     }
     
+    
     //format time (ss -> hh:mm:ss)
     private func timeFormatter(time: Double) -> (Int, Int, Int){
         let hours: Int = Int(time) / 3600

@@ -61,7 +61,7 @@ struct EmojiArtDocumentView: View {
         //handle app states
         .onChange(of: scenePhase){ phase in
             switch phase{
-            case .active: print("phase active"); document.startTimer()
+            case .active: print("phase active"); document.startTimer() //TODO: this causes the timer to start when app is started: so when starting app on an iPhone, the timer starts even though you haven't the default empty document opened yet
             case .inactive, .background: print("phase inactive"); document.stopTimer()
             @unknown default: print("phase undef")
             }
