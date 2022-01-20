@@ -8,13 +8,18 @@ struct EmojiArtDocumentView: View {
     @State private var chosenBackgroundColor: Color
     @State private var chosenOpacity: Double
     @State private var isBackgroundColorEditorPresented = false
-
+    
+    
+    @Environment(\.scenePhase) var scenePhase
+    
     init(document: EmojiArtDocumentViewModel) {
         self.document = document
-        chosenPalette = document.defaultPalette
-        chosenBackgroundColor = document.defaultBackgroundColor
-        chosenOpacity = document.defaultBackgroundOpacity
+        _chosenPalette = State(initialValue: document.defaultPalette)
+        _chosenBackgroundColor = State(initialValue: document.defaultBackgroundColor)
+        _chosenOpacity = State(initialValue: document.defaultBackgroundOpacity)
     }
+    
+    
 
     private var isLoading: Bool {
         document.backgroundImage == nil && document.backgroundURL != nil
@@ -27,7 +32,7 @@ struct EmojiArtDocumentView: View {
                 ZStack(alignment: .top){
                     createBackground(geometry: geometry)
                     createEmojiLayer(geometry: geometry)
-                    TimeTracker()
+                    TimeTracker(document: document)
                         .padding()
                         .frame(width: geometry.size.width, alignment: Alignment.bottomTrailing)
                 }
@@ -52,6 +57,24 @@ struct EmojiArtDocumentView: View {
                     Alert(title: Text("Paste Background Image"), message: Text("Copy the URL of an image to set it as background image"))
                 }
             }
+        }
+        //handle app states
+        .onChange(of: scenePhase){ phase in
+            switch phase{
+            case .active: print("phase active"); document.startTimer()
+            case .inactive, .background: print("phase inactive"); document.stopTimer()
+            @unknown default: print("phase undef")
+            }
+        }
+        //start/resume timer when document view appears
+        .onAppear{
+            print("onAppear")
+            document.startTimer()
+        }
+        //stop timer when document view disappears
+        .onDisappear{
+            print("onDisappear")
+            document.stopTimer()
         }
     }
     

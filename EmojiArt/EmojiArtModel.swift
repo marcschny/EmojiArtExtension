@@ -4,7 +4,7 @@ import SwiftUI
 struct EmojiArtModel: Codable {
     var backgroundURL: URL?
     var emojis = [Emoji]()
-    var timer: Double?
+    var timer: Double = 0
     var backgroundColor: Color = Color.white
 
     init() { }

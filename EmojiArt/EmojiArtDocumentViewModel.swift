@@ -1,10 +1,9 @@
 import SwiftUI
 import Combine
 
-//TODO: task 1 - time tracker not working
-
 
 class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifiable {
+    
     static func == (lhs: EmojiArtDocumentViewModel, rhs: EmojiArtDocumentViewModel) -> Bool {
         lhs.id == rhs.id
     }
@@ -31,7 +30,7 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
     }
     
     
-    @Published private var emojiArtModel: EmojiArtModel
+    @Published public var emojiArtModel: EmojiArtModel
     private var emojiArtModelSink: AnyCancellable?
     @Published private(set) var backgroundImage: UIImage?
     var emojis: [EmojiArtModel.Emoji] { emojiArtModel.emojis }
@@ -46,6 +45,7 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
         }
     }
 
+    
 
     init(id: UUID = UUID()) {
         self.id = id
@@ -53,10 +53,28 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
         let emojiArtJson = UserDefaults.standard.data(forKey: userDefaultsKey)
         emojiArtModel = EmojiArtModel(json: emojiArtJson) ?? EmojiArtModel()
         emojiArtModelSink = $emojiArtModel.sink { emojiArtModel in
-            print("JSON: \(emojiArtModel.json?.utf8 ?? "nil")")
+            //print("JSON: \(emojiArtModel.json?.utf8 ?? "nil")")
             UserDefaults.standard.set(emojiArtModel.json, forKey: userDefaultsKey)
         }
         fetchBackgroundImageData()
+    }
+    
+    // MARK: - Timer
+    var timer: Double = 0
+    var subscription: AnyCancellable?
+    
+    //start/resume timer
+    func startTimer(){
+        subscription = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+            .sink{ _ in
+                self.emojiArtModel.timer += 1
+                self.timer = self.emojiArtModel.timer
+            }
+    }
+    
+    //stop timer
+    func stopTimer(){
+        subscription?.cancel()
     }
     
     // MARK: - Intents
