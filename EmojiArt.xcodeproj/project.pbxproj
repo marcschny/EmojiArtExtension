@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1B2B0E279DA97E00163F0D /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = DD1B2B0D279DA97D00163F0D /* Gemfile */; };
 		DD2927612773D1640066F40D /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2927602773D1640066F40D /* TimeTracker.swift */; };
 		DD4488C6277F53DC00F38D75 /* BackgroundColorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */; };
 		DD4CC1FD277DEF0C00FCA1A1 /* PaletteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CC1FC277DEF0C00FCA1A1 /* PaletteEditor.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		DD1B2B0A2799DECA00163F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DD1B2B0D279DA97D00163F0D /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		DD2927602773D1640066F40D /* TimeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
 		DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorEditor.swift; sourceTree = "<group>"; };
 		DD4CC1FC277DEF0C00FCA1A1 /* PaletteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteEditor.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				DD4CC202277DEF4F00FCA1A1 /* EditableText.swift */,
 				DD4CC28C277E0B9100FCA1A1 /* WallView.swift */,
 				DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */,
+				DD1B2B0D279DA97D00163F0D /* Gemfile */,
 			);
 			path = EmojiArt;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD1B2B0E279DA97E00163F0D /* Gemfile in Resources */,
 				DEF3E4FE272AEFAE00A93527 /* Preview Assets.xcassets in Resources */,
 				DEF3E4FB272AEFAE00A93527 /* Assets.xcassets in Resources */,
 			);
