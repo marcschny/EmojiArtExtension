@@ -4,9 +4,9 @@
 Marc Schnydrig
 
 ### Screenshots
-![image](https://github.com/marcschny/EmojiArtExtension/blob/main/EmojiArt/screenshots/screenshot1.png)
-![image](https://github.com/marcschny/EmojiArtExtension/blob/main/EmojiArt/screenshots/screenshot2.png)
-![image](https://github.com/marcschny/EmojiArtExtension/blob/main/EmojiArt/screenshots/screenshot3.png)
+<img src="https://github.com/marcschny/EmojiArtExtension/blob/main/EmojiArt/screenshots/screenshot1.png" width="100" height="250">
+<img src="https://github.com/marcschny/EmojiArtExtension/blob/main/EmojiArt/screenshots/screenshot2.png" width="100" height="250">
+<img src="https://github.com/marcschny/EmojiArtExtension/blob/main/EmojiArt/screenshots/screenshot3.png" width="100" height="250">
 
 ### Bemerkungen
 - Der FontPicker funktioniert nicht korrekt. Er ändert lediglich die Font eines neu erstellen Documents. Hatte zu wenig Zeit mehr dieses Feature vollständig funktionsfähig zu implementieren.
