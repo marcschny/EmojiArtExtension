@@ -6,12 +6,16 @@ struct EditableText: View {
     var onChanged: (String) -> Void
 
     @State private var editableText: String = ""
+    @State private var customFont: String
 
-    init(_ text: String, isEditing: Bool, onChanged: @escaping (String) -> Void) {
+    
+    init(_ text: String, isEditing: Bool, onChanged: @escaping (String) -> Void, customFont: String) {
         self.text = text
         self.isEditing = isEditing
         self.onChanged = onChanged
+        self.customFont = customFont
     }
+
 
     var body: some View {
         Group {
@@ -21,7 +25,7 @@ struct EditableText: View {
                         onChanged(editableText)
                     }
             } else {
-                Text(text)
+                Text(text).font(.custom(customFont, size: 18))
             }
         }
         .onAppear { self.editableText = self.text }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD1B2B0E279DA97E00163F0D /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = DD1B2B0D279DA97D00163F0D /* Gemfile */; };
+		DD1B2B10279DBD2900163F0D /* CustomFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B2B0F279DBD2900163F0D /* CustomFontPicker.swift */; };
 		DD2927612773D1640066F40D /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2927602773D1640066F40D /* TimeTracker.swift */; };
 		DD4488C6277F53DC00F38D75 /* BackgroundColorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */; };
 		DD4CC1FD277DEF0C00FCA1A1 /* PaletteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4CC1FC277DEF0C00FCA1A1 /* PaletteEditor.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		DD1B2B0A2799DECA00163F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DD1B2B0D279DA97D00163F0D /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		DD1B2B0F279DBD2900163F0D /* CustomFontPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontPicker.swift; sourceTree = "<group>"; };
 		DD2927602773D1640066F40D /* TimeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
 		DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorEditor.swift; sourceTree = "<group>"; };
 		DD4CC1FC277DEF0C00FCA1A1 /* PaletteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteEditor.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				DD4CC28C277E0B9100FCA1A1 /* WallView.swift */,
 				DD4488C5277F53DC00F38D75 /* BackgroundColorEditor.swift */,
 				DD1B2B0D279DA97D00163F0D /* Gemfile */,
+				DD1B2B0F279DBD2900163F0D /* CustomFontPicker.swift */,
 			);
 			path = EmojiArt;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF3E527272AF08800A93527 /* EmojiArtModel.swift in Sources */,
+				DD1B2B10279DBD2900163F0D /* CustomFontPicker.swift in Sources */,
 				DEF3E525272AF06100A93527 /* EmojiArtDocumentView.swift in Sources */,
 				DEF3E4F7272AEFAB00A93527 /* EmojiArtApp.swift in Sources */,
 				DD4CC1FF277DEF2400FCA1A1 /* EmojiArtDocumentStore.swift in Sources */,
