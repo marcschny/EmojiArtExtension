@@ -13,13 +13,10 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
-
-
 ### tests
-Runs all tests on an iPhone 12 Pro and an iPad Air (4th generation)
 
 ```sh
-fastlane tests
+[bundle exec] fastlane tests
 ```
 
 

@@ -18,6 +18,7 @@ default_platform(:ios)
 # run all tests
 lane :tests do
   run_tests(
+	scheme: "EmojiArt",
 	devices:["iPhone 12 Pro", "iPad Air (4th generation)"]
   )
 end
