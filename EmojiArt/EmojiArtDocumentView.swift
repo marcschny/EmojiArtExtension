@@ -9,8 +9,8 @@ struct EmojiArtDocumentView: View {
     @State private var chosenOpacity: Double
     @State private var isBackgroundColorEditorPresented = false
     
-    
     @Environment(\.scenePhase) var scenePhase
+    
     
     init(document: EmojiArtDocumentViewModel) {
         self.document = document
@@ -19,8 +19,6 @@ struct EmojiArtDocumentView: View {
         _chosenOpacity = State(initialValue: document.defaultBackgroundOpacity)
     }
     
-    
-
     private var isLoading: Bool {
         document.backgroundImage == nil && document.backgroundURL != nil
     }
@@ -68,12 +66,10 @@ struct EmojiArtDocumentView: View {
         }
         //start/resume timer when document view appears
         .onAppear{
-            print("onAppear")
             document.startTimer()
         }
         //stop timer when document view disappears
         .onDisappear{
-            print("onDisappear")
             document.stopTimer()
         }
     }
@@ -101,7 +97,7 @@ struct EmojiArtDocumentView: View {
             }
             .padding(.horizontal)
             .sheet(isPresented: $isBackgroundColorEditorPresented){
-                BackgroundColorEditor(isPresented: $isBackgroundColorEditorPresented, chosenColor: document.backgroundColor, document: document)
+                BackgroundColorEditor(isPresented: $isBackgroundColorEditorPresented, chosenColor: document.backgroundColor, chosenOpacity: document.backgroundOpacity, document: document)
             }
             
         }.padding(.horizontal)
@@ -117,6 +113,7 @@ struct EmojiArtDocumentView: View {
                 }
             }
         )
+            .opacity(document.backgroundOpacity)
             .edgesIgnoringSafeArea([.horizontal,.bottom])
             .onDrop(of: [.url, .plainText, .image], isTargeted: nil) { providers, location in
                 return drop(providers: providers, location: location, geometry: geometry)

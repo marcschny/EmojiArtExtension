@@ -1,7 +1,6 @@
 import SwiftUI
 import Combine
 
-
 class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifiable {
     
     static func == (lhs: EmojiArtDocumentViewModel, rhs: EmojiArtDocumentViewModel) -> Bool {
@@ -16,7 +15,7 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
     
     static let palette: String =  "🐶🐱🐹🐰🦊🐼🐨🐯🐸🐵🐧🐦🐤🦆🦅🦇🐺"
     
-    // background defaults
+    // MARK: - Background settings (color and opacity)
     var defaultBackgroundColor: Color = Color.white
     var defaultBackgroundOpacity: Double = 1
     
@@ -26,6 +25,15 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
         }
         set {
             emojiArtModel.backgroundColor = newValue
+        }
+    }
+    
+    var backgroundOpacity: Double{
+        get {
+            emojiArtModel.opacity
+        }
+        set {
+            emojiArtModel.opacity = newValue
         }
     }
     
@@ -59,7 +67,7 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
         fetchBackgroundImageData()
     }
     
-    // MARK: - Timer
+    // MARK: - Time Tracker
     var timer: Double = 0
     var subscription: AnyCancellable?
     
@@ -76,6 +84,7 @@ class EmojiArtDocumentViewModel: ObservableObject, Hashable, Equatable, Identifi
     func stopTimer(){
         subscription?.cancel()
     }
+    
     
     // MARK: - Intents
     

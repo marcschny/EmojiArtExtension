@@ -3,6 +3,7 @@ import SwiftUI
 
 // CustomFontPicker not working properly
 // only works on new documents added
+// TODO: try to use an Env variable to globally change font
 struct CustomFontPicker: UIViewControllerRepresentable {
     @Binding var font: UIFontDescriptor?
     @Environment(\.presentationMode) var presentationMode

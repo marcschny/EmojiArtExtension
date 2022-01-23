@@ -5,13 +5,13 @@ struct BackgroundColorEditor: View{
     
     @Binding var isPresented: Bool
     @State var chosenColor: Color
-    //@State var chosenOpacity: Double
+    @State var chosenOpacity: Double
     @ObservedObject var document: EmojiArtDocumentViewModel
 
-    init(isPresented: Binding<Bool>, chosenColor: Color, /*chosenOpacity: Double,*/ document: EmojiArtDocumentViewModel) {
+    init(isPresented: Binding<Bool>, chosenColor: Color, chosenOpacity: Double, document: EmojiArtDocumentViewModel) {
         self._isPresented = isPresented
         self.chosenColor = chosenColor // Binding.init expects Binding
-        //self.chosenOpacity = chosenOpacity
+        self.chosenOpacity = chosenOpacity
         self.document = document // ObservedObject.init from wrappedValue
     }
     
@@ -35,15 +35,13 @@ struct BackgroundColorEditor: View{
                 ColorPicker("Background Color", selection: $chosenColor)
                     .onChange(of: chosenColor) { newValue in
                         document.backgroundColor = newValue
-                        print(newValue)
                     }
-                //TODO: why opacity slider? ColorPicker already has one implemented!
-                //HStack {
-                //    Slider(value: $chosenOpacity)
-                //        .onChange(of: chosenOpacity) { newValue in
-                //            chosenOpacity = newValue
-                //        }
-                //}
+                HStack {
+                    Slider(value: $chosenOpacity)
+                        .onChange(of: chosenOpacity) { newValue in
+                            document.backgroundOpacity = newValue
+                        }
+                }
             }
             
         }

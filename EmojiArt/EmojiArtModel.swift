@@ -6,6 +6,7 @@ struct EmojiArtModel: Codable {
     var emojis = [Emoji]()
     var timer: Double = 0
     var backgroundColor: Color = Color.white
+    var opacity: Double = 1
 
     init() { }
 

@@ -41,7 +41,6 @@ struct EmojiArtDocumentChooser: View {
                 }
                 ToolbarItem(placement: .navigationBarLeading){
                     Button(action: {
-                        print("choose font")
                         isShowingFontPicker.toggle()
                     }){
                         Image(systemName: "textformat")

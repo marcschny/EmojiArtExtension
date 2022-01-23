@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-
+// time tracker as separate view
 struct TimeTracker: View{
     
     @ObservedObject var document: EmojiArtDocumentViewModel
